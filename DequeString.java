@@ -146,8 +146,10 @@ public class DequeString implements Iterable<String> {
 
         public String toString() {
             StringBuilder s = new StringBuilder();
-            for (String item : this)
+            for (DequeIterator it = this; it.hasNext(); ) {
+                String item = it.next();
                 s.append(item + " ");
+            }
             return s.toString();
         }
     }
